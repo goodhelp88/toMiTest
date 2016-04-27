@@ -26,7 +26,6 @@ public class AppController extends BaseController{
 	@Autowired
 	private AppService appService;
 	
-	@PreAuthorize("hasRole('ROLE_APP')")
 	@RequestMapping(value="/v1/position", method=RequestMethod.POST)
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public void savePosition(@RequestBody List<DetectedPosition> position, @RequestHeader(required=true, value="user") @Email String userEmail) throws BadRequestException, ForbiddenException {
